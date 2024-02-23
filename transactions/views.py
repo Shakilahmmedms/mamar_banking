@@ -194,6 +194,3 @@ def transfer(request):
     else:
         form = TransferForm()
     return render(request, 'transactions/transfer_money.html', {'form': form})
-
-
-
