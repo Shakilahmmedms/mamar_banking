@@ -86,10 +86,6 @@ class WithdrawalMoneyView(TransactionCreateMixin):
         send_transaction_email(self.request.user, amount, 'Withdrawal Message', 'transactions/withdrawal_email.html')
         return super().form_valid(form)
     
-
-
-
-    
 class LoanRequestView(TransactionCreateMixin):
     form_class = LoanRequestForm
     title = 'Request For Loan'
@@ -167,7 +163,6 @@ class LoanListView(LoginRequiredMixin, ListView):
         user_account = self.request.user.account
         queryset = Transaction.objects.filter(account = user_account,transaction_type = LOAN)
         return queryset
-    
 
 @login_required
 def transfer(request):
